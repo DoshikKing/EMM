@@ -12,7 +12,7 @@ namespace EMM
 		public List<string> getAllTables(String connectionInstance, UserDTO userDTO)
         {
 			List<string> data = new List<string>();
-			String query = "show tables from engine";
+			String query = "show tables from engine_construction";
 			MySqlConnection mySqlConnection = new MySqlConnection(connectionInstance);
             try
             {
@@ -26,8 +26,7 @@ namespace EMM
                     {
 						if (!userDTO.getRole().Equals("direc"))
 						{
-							if (mySqlDataReader.GetString(0).Equals("workers") || mySqlDataReader.GetString(0).Equals("parts") || mySqlDataReader.GetString(0).Equals("warehouse")
-								|| mySqlDataReader.GetString(0).Equals("documents_and_regulations") || mySqlDataReader.GetString(0).Equals("engines") || mySqlDataReader.GetString(0).Equals("machines"))
+							if (mySqlDataReader.GetString(0).Equals("employees") || mySqlDataReader.GetString(0).Equals("engine_parts") || mySqlDataReader.GetString(0).Equals("list_of_constructed_engines"))
 							{
 								data.Add(mySqlDataReader.GetString(0));
 							}

@@ -11,7 +11,7 @@ namespace EMM
         public UserDTO LoginIntoSystem(UserDTO userDTO, String connectionInstance, String login, String password)
         {
             userDTO = new UserDTO();
-            String query = "select * from engine.users where login=@login and password=@password";
+            String query = "select * from engine_construction.users where login=@login and password=@password";
             MySqlConnection mySqlConnection = new MySqlConnection(connectionInstance);
             try
             {
@@ -24,7 +24,7 @@ namespace EMM
                 mySqlDataReader = mySqlCommand.ExecuteReader();
                 while (mySqlDataReader.Read())
                 {
-                    userDTO = new UserDTO(mySqlDataReader.GetString("id_users"), mySqlDataReader.GetString("role"));
+                    userDTO = new UserDTO(mySqlDataReader.GetString("id"), mySqlDataReader.GetString("role"));
                 }
             }
             catch (Exception ex)

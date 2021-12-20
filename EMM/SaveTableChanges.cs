@@ -12,7 +12,7 @@ namespace EMM
         public String saveAllChanges(DataTable dataTable, String connectionInstance, String tableName)
         {
             MySqlConnection mySqlConnection = new MySqlConnection(connectionInstance);
-            MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter("select * from engine." + tableName, mySqlConnection);
+            MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter("select * from engine_construction." + tableName, mySqlConnection);
             MySqlCommandBuilder mySqlCommandBuilder = new MySqlCommandBuilder(mySqlDataAdapter);
             mySqlDataAdapter.UpdateCommand = mySqlCommandBuilder.GetUpdateCommand();
             mySqlDataAdapter.InsertCommand = mySqlCommandBuilder.GetInsertCommand();

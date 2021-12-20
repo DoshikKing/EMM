@@ -12,7 +12,7 @@ namespace EMM
         public DataTable loadSelectedTable(String tableName, String connectionInstance)
         {
             DataTable dataTable = new DataTable();
-            String query = "select * from engine."+tableName;
+            String query = "select * from engine_construction." + tableName;
             MySqlConnection mySqlConnection = new MySqlConnection(connectionInstance);
             try
             {

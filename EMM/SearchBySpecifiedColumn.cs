@@ -9,7 +9,7 @@ namespace EMM
         public DataTable search(String columName, String connectionInstance, String tableName, String field)
         {
             DataTable dataTable = new DataTable();
-            String query = "select * from engine." + tableName + " where " + columName + " like '" + field + "%'";
+            String query = "select * from engine_construction." + tableName + " where " + columName + " like '" + field + "%'";
             MySqlConnection mySqlConnection = new MySqlConnection(connectionInstance);
             try
             {
